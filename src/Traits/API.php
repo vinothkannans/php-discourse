@@ -7,11 +7,6 @@ trait API
 
   use HTTP;
 
-  public function createTopic($title, $raw, $category) {
-    $params = ['title' => $title, 'raw' => $raw, 'category' => $category];
-    return $this->request('/posts', $params, 'POST');
-  }
-
   protected function request($path, $queryParams = null, $method = "GET") {
     if ($queryParams == null) {
       $queryParams = array();
